@@ -78,29 +78,32 @@ const LoginForm = () => {
    {/*remember to comment!!!*/}
    {/*states/}
         {/*form goes here*/}
-   <div>
+   <div className="formWrapper">
     <form onSubmit={formSubmit}>
-     <div>
+
+     <div className="input">
       <label htmlFor="name">
         Name: 
       {errors.name.length > 0 ? <p className="error">{errors.name}</p> : null}
-    </label>
+      </label>
       <input
-       id="name"
-       type="text"
-       name="name"
-       placeholder="type here please"
-       value={formState.name}
-       onChange={inputChange}
+        data-cy="name"
+        id="name"
+        type="text"
+        name="name"
+        placeholder="type here please"
+        value={formState.name}
+        onChange={inputChange}
       />
      </div>
 
-     <div>
+     <div className="input">
       <label htmlFor="email">E-Mail: 
       {errors.email.length > 0 ? <p className="error">{errors.email}</p> : null}
       </label>
       <input
        id="email"
+       data-cy="email"
        type="email"
        name="email"
        placeholder="please, no hotmail accounts."
@@ -109,7 +112,7 @@ const LoginForm = () => {
       />
      </div>
 
-     <div>
+     <div className="input">
       <label htmlFor="password">Password:
       {errors.password.length > 0 ? (
        <p className="error">{errors.password}</p>
@@ -117,6 +120,7 @@ const LoginForm = () => {
        </label>
       <input
        id="password"
+       data-cy="password"
        type="password"
        name="password"
        placeholder="be safe"
@@ -125,12 +129,13 @@ const LoginForm = () => {
       />
      </div>
 
-     <div>
+     <div className="input">
       <label htmlFor="terms">Please read terms of use before continuing
       {errors.terms.length > 0 ? <p className="error">{errors.terms}</p> : null}
       </label>
       <input
        id="terms"
+       data-cy="terms"
        type="checkbox"
        name="terms"
        value={formState.terms}
@@ -139,8 +144,8 @@ const LoginForm = () => {
 
      </div>
 
-     <div>
-      <button disabled={buttonDisabled} type="submit">
+     <div className="input">
+      <button disabled={buttonDisabled} data-cy="submit" type="submit">
        Allons-y
       </button>
      </div>
